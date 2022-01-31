@@ -20,12 +20,12 @@ class PythonCoreExercise:
 
     def char_counter(self, x):
         """ counts the number of alphabetical characters, numeric characters, and symbolic characters  and returns the counts in that order"""
-        res = {}
-        res['chars'], res['digits'], res['symbol'] = 0, 0, 0
-        for i in x.lower():
-            if ord(i) in range(97, 123):
+        res = {'chars': 0, 'digits': 0, 'symbol': 0}
+        nums = [ord(i) for i in x.lower()]
+        for n in nums:
+            if n in range(97, 123):
                 res['chars'] += 1
-            elif ord(i) in range(48, 58):
+            elif n in range(48, 58):
                 res['digits'] += 1
             else:
                 res['symbol'] += 1
@@ -49,7 +49,6 @@ class PythonCoreExercise:
             for n in range(len(goal)):
                 x[n] = goal[n]
             res = "".join([x[n].upper() if n in caps else x[n] for n in range(len(x))])
-            
         else:
             res = x
         return res
