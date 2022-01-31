@@ -9,7 +9,10 @@ class PythonCoreExerciseCharCounterTests(unittest.TestCase):
         cls.func = PythonCoreExercise()
     
     def test_char_counter(self):
-        self.assertEqual(self.func.char_counter(self.testInput), (8, 3, 4))
+        """ tests if the returned values are correct """
+        res = self.func.char_counter(self.testInput)
+        self.assertEqual((res['chars'], res['digits'], res['symbol']), (8,3,4))
+
 
 
 if __name__ == '__main__':
